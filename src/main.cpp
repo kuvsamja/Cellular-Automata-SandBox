@@ -145,15 +145,14 @@ int main(int argc, char* argv[]){
 
                 if(chp == 'a'){
                     chp='q';
-                    char mapName[100]="";
+                    string mapName;
 
                     cout << "Type the name of map you want to save:\n";
                     cin >> mapName;
 
-                    char directory[200]="assets/maps/";
-                    strcat(directory,mapName);
+                    string directory="assets/maps/" + mapName;
 
-                    FILE* mapFile = fopen(directory,"w");
+                    FILE* mapFile = fopen(directory.c_str(),"w");
                     
                     for(int y=0;y<GRID_HEIGHT;y++){
                         for(int x=0;x<GRID_WIDTH;x++){
